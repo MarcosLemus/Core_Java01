@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: none;
+        
+        }
+
+        canvas {
+            display: block;
+        
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+
+        //contexto del canvas
+
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        //redimension
+
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+
+        // ------------------
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'blue';
+        ctx.moveTo(50, 50);
+        ctx.lineTo(250, 50);
+        ctx.lineTo(250, 250);
+        ctx.stroke();
+        ctx.closePath();
+
+        //rectangulo
+        ctx.fillStyle = '#512312';
+        ctx.fillRect(300, 100, 250, 50);
+
+        // arc (circunferencia)
+        console.log(Math.PI);
+        const PI_DOUBLE = 2 * Math.PI;
+        ctx.beginPath();
+        ctx.fillStyle = 'orange';
+        ctx.arc(25, 25, 20, 0, PI_DOUBLE)
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+    </script>
+</body>
+</html>
